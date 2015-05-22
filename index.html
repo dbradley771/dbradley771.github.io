@@ -20,10 +20,10 @@
 		<link rel="manifest" href="favicon/manifest.json">
 		<meta name="msapplication-TileColor" content="#00C800">
 		<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-		<meta name="theme-color" content="#00C800">
+		<meta name="theme-color" content="#009800">
 		<title>David Bradley</title>
 		<style type="text/css">
-			@font-size-base: 15px;
+			/* -- Tag only CSS --- */
 			
 			html, body {
 				height: 100%;
@@ -31,17 +31,25 @@
 				margin: 0;
 				padding: 0;
 				background: black;
+				color: white;
 				font-family: Arial, sans-serif;
-			}
-			
-			.fade-in {
-				display: none;
 			}
 			
 			a {
 				font-size: 75%;
 				text-decoration: none;
 				color: #555;
+			}
+			
+			h1 {
+				padding: 0;
+				margin: 0;
+			}
+			
+			/* ---- Class CSS ---- */
+			
+			.fade-in {
+				display: none;
 			}
 			
 			.wobble {
@@ -51,6 +59,7 @@
 				visibility: visible !important;	
 			}
 			
+			/* -- Animation CSS -- */
 			
 			@keyframes wobble {
 				0% {
@@ -90,6 +99,73 @@
 					-webkit-transform: rotate(3deg);
 				}
 			}
+			
+			/* ----- ID CSS ------ */
+			
+				/* Navbar */
+				#nb {
+					top: 15px;
+					position: fixed;
+					width: 100%;
+					height: 30px;
+					z-index:100;
+					min-width: 620px;
+					opacity: 0.25;
+					-webkit-transition: opacity .25s ease-in-out;
+					-moz-transition: opacity .25s ease-in-out;
+					-o-transition: opacity .25s ease-in-out;
+					transition: opacity .25s ease-in-out;
+				}
+				
+				#nb:hover {
+					opacity: 1;
+				}
+				
+				@media screen and (max-width: 620px){
+					#nb{
+						display: none;
+					}
+				}
+				
+				#nbbg {
+					margin-top: -15px;
+					height: 60px;
+					background-color: rgba(0,0,0,0.75);
+					position: absolute;
+					width: 100%;
+				}
+				
+				#nbrc {
+					float: right;
+					position: relative;
+					line-height:30px;
+					width: auto;
+					padding-left: 5px;
+					padding-right: 30px;
+					text-align: right;
+				}
+				
+				#nbrc a {
+					display: inline;
+					padding-left: 15px;
+					color: #ffffff;
+					font-size: inherit;
+				}
+				
+				#nblc {
+					position: relative;
+					height: 30px;
+					width: auto;
+					max-width: 200px;
+				}
+				
+				#name {
+					padding-left: 30px;
+					font-size: 25px;
+					font-weight: bold;
+					line-height: 30px;
+				}
+				/* End Navbar */
 			
 			#color {
 				height: 100%;
@@ -141,8 +217,9 @@
 		<script>
 			$( document ).ready(function() {
 				setTimeout(function(){
-					$('.fade-in').fadeIn(5000);
+					$('#color').fadeIn(5000);
 					setTimeout(function(){
+						$('#nb').fadeIn(1500);
 						$('#controls').fadeIn(1500);
 					}, 5000);
 				}, 1000);
@@ -151,6 +228,19 @@
 		<script type="text/javascript" async src="https://apis.google.com/js/platform.js?publisherid=106029859874749039380"></script>
 	</head>
 	<body>
+		<div id="nb" class="fade-in">
+			<div id="nbbg"></div>
+			<div id="nbrc">
+				<a href="http://facebook.dbradley771.com">Facebook</a>
+				<a href="http://twitter.dbradley771.com">Twitter</a>
+				<a href="http://plus.dbradley771.com">Google+</a>
+				<a href="http://youtube.dbradley771.com">YouTube</a>
+				<a href="http://github.dbradley771.com">Github</a>
+			</div>
+			<div id="nblc">
+				<h1><div id="name">David Bradley</div></h1>
+			</div>
+		</div>
 		<div id="color" class="fade-in">
 			<div id="holder">
 				<div id="image" class="wobble"></div>
