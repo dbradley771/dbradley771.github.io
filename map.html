@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script>
+		function toUrl(location) {
+			var head = "https://home.www.uprr.com/emp/hr/phonebook/svg_upc_map.cfm?UPC_LOC_ID_LIST=";
+			var URL = head.concat(location);
+			return URL;	
+		}
+		
+		function getUrl(){
+			var variable = "location";
+			var query = window.location.search.substring(1);
+			var vars = query.split("&");
+			for (var i=0;i<vars.length;i++) {
+				var pair = vars[i].split("=");
+				if (pair[0] == variable) {
+					window.open(toUrl(pair[1]), "map");
+					console.log(pair[1]);
+				}
+			}
+		}
+	</script>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			background-color: #eee;
+			font-family: arial;
+		}
+		
+		#header {
+			color: #eee;
+			font-weight: bold;
+			background-color: #333;
+			height: 61px;
+			width: 100%;
+			border-bottom: 1px solid #111;
+		}
+		
+		form {
+			padding: 20px;
+		}
+		
+		iframe {
+			border: none;
+			width: 100%;
+			height: calc( 100% - 66px );
+		}
+	</style>
+</head>
+<body>
+<div id="header">
+<form name="myForm" id="myForm" onsubmit="go()">
+	Location:
+	<input type="text" name="location" size="50">
+	<input type="submit" value="Find">
+</form>
+</div>
+
+<iframe src="about:blank" style="C" name="map">IFRAME not supported!</iframe>
+<script>
+	window.onload = getUrl();
+</script>
+</body>
+</html>
