@@ -1,96 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-		<meta name="msapplication-TileColor" content="#00C800"/>
-		<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png"/>
-		<meta name="msapplication-tooltip" content="David Bradley"/>
-		<meta name="theme-color" content="#009800"/>
-		<!-- Such favicon -->
-		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png"/>
-		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png"/>
-		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png"/>
-		<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png"/>
-		<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png"/>
-		<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png"/>
-		<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png"/>
-		<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png"/>
-		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png"/>
-		<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png"/>
-		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
-		<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png"/>
-		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
-		<!-- End favicon -->
-		<link rel="manifest" href="favicon/manifest.json"/>
-		<title>David Bradley</title>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
-		<style type="text/css"></style>
-		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
-		<script type="text/javascript">
-			<!--
-				function toggle_drawer() {
-					var drawer = document.getElementById('player-drawer');
-					if(drawer.style.right == '0px') {
-						drawer.style.transitionTimingFunction = 'cubic-bezier(.5,.05,.6,.35)';
-						drawer.style.right = '-250px';
-					} else {
-						drawer.style.transitionTimingFunction = 'cubic-bezier(.2,.75,.55,1)';
-						drawer.style.right = '0px';
-					}
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="msapplication-TileColor" content="#00C800" />
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png" />
+	<meta name="msapplication-tooltip" content="David Bradley" />
+	<meta name="theme-color" content="#009800" />
+	<!-- Such favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+	<!-- End such favicon -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link rel="manifest" href="favicon/manifest.json" />
+	<title>David Bradley</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<style type="text/css"></style>
+	<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+	<script type="text/javascript">
+		<!--
+			function toggle_drawer() {
+				var drawer = document.getElementById('player-drawer');
+				if(drawer.style.right == '0px') {
+					drawer.style.transitionTimingFunction = 'cubic-bezier(.5,.05,.6,.35)';
+					drawer.style.right = '-250px';
+				} else {
+					drawer.style.transitionTimingFunction = 'cubic-bezier(.2,.75,.55,1)';
+					drawer.style.right = '0px';
 				}
-			
-				$( document ).ready(function() {
-					console.log('go');
-					setTimeout(function(){
-						$('#logo-background').fadeIn(5000);
-						console.log('go');
-					}, 1000);
-				});
-				//-->
-		</script>
-	</head>
-	<body>
-		<header>
-			<button id="sidebar-button" role="button">=</button>
-			<h1>David Bradley</h1>
-		</header>
-		<nav>
-			<a href="http://facebook.dbradley771.com">Facebook</a>
-		</nav>
-		<div id="content">
-			<section id="logo-section" class="fade-in">
-				<div id="logo-background">
-					<div id="logo-holder">
-						<div id="logo" class="wobble"></div>
-					</div>
-				</div>
-			</section>
-			<p style="padding: 15px;">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur purus in ante feugiat, sed scelerisque sapien porta. Nam dictum, dui vitae sollicitudin rhoncus, tortor lectus auctor tellus, sit amet blandit ex metus ac libero. Aliquam id ligula arcu. Nunc quis eros velit. Vivamus varius finibus nisl, nec efficitur nisi varius eu. Maecenas scelerisque, orci ut luctus viverra, lectus justo viverra odio, at dictum tortor nunc quis arcu. Sed congue congue velit quis commodo. Nam at semper lacus.
-
-Nam imperdiet lacus ultrices, porta lorem quis, dictum nunc. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc et ornare velit. Pellentesque iaculis turpis erat, ut semper purus tristique eget. Donec aliquet arcu quis magna cursus ornare. Duis rhoncus feugiat ex sed condimentum. Mauris posuere massa a faucibus pretium. Vivamus et nibh lacinia, malesuada magna vitae, rhoncus nisi.
-
-Nam convallis id erat vel feugiat. Ut commodo risus libero, ut tempus elit congue quis. Sed sed varius sapien. Aenean interdum nunc vel elit pharetra tempus. Nullam tellus massa, rhoncus a dapibus a, lobortis a leo. Nam pulvinar turpis quis enim consequat, nec dapibus odio vestibulum. Vestibulum semper sapien lectus, a molestie mauris tincidunt in. Aenean eget viverra purus. Donec vitae dolor eu ex consequat ornare. Praesent mattis, leo non faucibus tincidunt, lectus dui laoreet nulla, eu pellentesque lorem nisi non purus. Donec tincidunt volutpat felis, et suscipit ante tempus ac. Pellentesque malesuada sit amet dui tempus semper. Suspendisse pellentesque interdum ligula, et venenatis dui lobortis in. Cras vel aliquam magna. Vestibulum iaculis laoreet orci non tempor.
-
-Mauris id ante eu nibh facilisis pulvinar ut at enim. Donec quam ante, eleifend in eros sed, tincidunt volutpat turpis. Morbi vitae rhoncus justo, at rhoncus magna. Vestibulum gravida convallis ligula, a lobortis erat venenatis in. In hac habitasse platea dictumst. Quisque ipsum mi, sodales vitae ante quis, congue congue odio. Fusce tristique erat at sapien efficitur tristique. Sed viverra laoreet dolor. Sed nibh velit, varius in enim et, egestas pellentesque quam. Proin venenatis tincidunt maximus. Quisque tempor leo nisi, at gravida elit posuere ut.
-
-Sed mollis tortor nec turpis consequat, sed tristique orci sodales. Nulla mi nisi, sodales pharetra molestie vitae, tempor et nunc. Aliquam feugiat non diam id vulputate. Quisque accumsan vulputate eros sit amet ultrices. Duis vitae erat in massa elementum iaculis non iaculis lectus. Maecenas mattis consectetur tempus. Nullam efficitur velit vel odio convallis viverra. Aliquam id venenatis leo, sit amet blandit lacus. Aenean vel iaculis libero, ut dictum ante. Aliquam neque ex, varius vel viverra a, pharetra sit amet felis. Morbi vulputate lectus mauris, at maximus velit commodo eu. Suspendisse libero ante, semper sit amet erat et, commodo laoreet nibh. Sed in dui vestibulum, iaculis odio vel, pellentesque nisl. Cras lobortis luctus eros, quis porta ligula dapibus id.
-			</p>			
-		</div>
-		<div id="player">
-			<div id="player-chest">
-				<div id="player-drawer">
-					<div id="player-control">Music player goes here!</div>
-					<div id="player-credits"><a href="https://proleter.bandcamp.com/album/curses-from-past-times-ep">"April Showers" by ProleteR</a><br/></div>
+			}
+		
+			$( document ).ready(function() {
+				setTimeout(function(){
+					$('#logo-background').fadeIn(5000);
+				}, 1000);
+			});
+		//-->
+	</script>
+</head>
+<body>
+	<header>
+		<button id="sidebar-button" role="button">=</button>
+		<h1>David Bradley</h1>
+	</header>
+	<nav>
+		<a href="http://facebook.dbradley771.com">Facebook</a>
+	</nav>
+	<div id="content">
+		<section id="logo-section" class="fade-in">
+			<div id="logo-background">
+				<div id="logo-holder">
+					<div id="logo" class="wobble"></div>
 				</div>
 			</div>
-			<div id="player-button" onclick="toggle_drawer();"></div>
+		</section>
+		<p style="padding: 15px;">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur purus in ante feugiat, sed scelerisque sapien porta. Nam dictum, dui vitae sollicitudin rhoncus, tortor lectus auctor tellus, sit amet blandit ex metus ac libero. Aliquam id ligula
+			arcu. Nunc quis eros velit. Vivamus varius finibus nisl, nec efficitur nisi varius eu. Maecenas scelerisque, orci ut luctus viverra, lectus justo viverra odio, at dictum tortor nunc quis arcu. Sed congue congue velit quis commodo. Nam at semper
+			lacus. Nam imperdiet lacus ultrices, porta lorem quis, dictum nunc. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc et ornare velit. Pellentesque iaculis turpis erat, ut semper purus
+			tristique eget. Donec aliquet arcu quis magna cursus ornare. Duis rhoncus feugiat ex sed condimentum. Mauris posuere massa a faucibus pretium. Vivamus et nibh lacinia, malesuada magna vitae, rhoncus nisi. Nam convallis id erat vel feugiat. Ut commodo
+			risus libero, ut tempus elit congue quis. Sed sed varius sapien. Aenean interdum nunc vel elit pharetra tempus. Nullam tellus massa, rhoncus a dapibus a, lobortis a leo. Nam pulvinar turpis quis enim consequat, nec dapibus odio vestibulum. Vestibulum
+			semper sapien lectus, a molestie mauris tincidunt in. Aenean eget viverra purus. Donec vitae dolor eu ex consequat ornare. Praesent mattis, leo non faucibus tincidunt, lectus dui laoreet nulla, eu pellentesque lorem nisi non purus. Donec tincidunt
+			volutpat felis, et suscipit ante tempus ac. Pellentesque malesuada sit amet dui tempus semper. Suspendisse pellentesque interdum ligula, et venenatis dui lobortis in. Cras vel aliquam magna. Vestibulum iaculis laoreet orci non tempor. Mauris id
+			ante eu nibh facilisis pulvinar ut at enim. Donec quam ante, eleifend in eros sed, tincidunt volutpat turpis. Morbi vitae rhoncus justo, at rhoncus magna. Vestibulum gravida convallis ligula, a lobortis erat venenatis in. In hac habitasse platea
+			dictumst. Quisque ipsum mi, sodales vitae ante quis, congue congue odio. Fusce tristique erat at sapien efficitur tristique. Sed viverra laoreet dolor. Sed nibh velit, varius in enim et, egestas pellentesque quam. Proin venenatis tincidunt maximus.
+			Quisque tempor leo nisi, at gravida elit posuere ut. Sed mollis tortor nec turpis consequat, sed tristique orci sodales. Nulla mi nisi, sodales pharetra molestie vitae, tempor et nunc. Aliquam feugiat non diam id vulputate. Quisque accumsan vulputate
+			eros sit amet ultrices. Duis vitae erat in massa elementum iaculis non iaculis lectus. Maecenas mattis consectetur tempus. Nullam efficitur velit vel odio convallis viverra. Aliquam id venenatis leo, sit amet blandit lacus. Aenean vel iaculis libero,
+			ut dictum ante. Aliquam neque ex, varius vel viverra a, pharetra sit amet felis. Morbi vulputate lectus mauris, at maximus velit commodo eu. Suspendisse libero ante, semper sit amet erat et, commodo laoreet nibh. Sed in dui vestibulum, iaculis odio
+			vel, pellentesque nisl. Cras lobortis luctus eros, quis porta ligula dapibus id.
+		</p>
+	</div>
+	<div id="player">
+		<div id="player-chest">
+			<div id="player-drawer" style="right: 0px;">
+				<div id="player-control">
+					<div id="player-wrapper">
+						<div id="player-play" class="player-item"><i class="material-icons">play_arrow</i></div>
+						<div id="player-slider" class="player-item">
+							<div id="player-slider-track">
+								<div id="player-slider-knob"></div>
+							</div>
+						</div>
+						<div id="player-volume" class="player-item"><i class="material-icons">volume_up</i></div>
+					</div>
+				</div>
+				<div id="player-credits">
+					<div id="player-wrapper">
+						<a href="https://proleter.bandcamp.com/album/curses-from-past-times-ep">"April Showers" by ProleteR</a>
+					</div>
+				</div>
+			</div>
 		</div>
-		<footer>
-			<p>Created by David Bradley</p>
-			<p>E-Mail: <a href="mailto:contact@dbradley771.com">contact@dbradley771.com</a></p>
-		</footer>
-	</body>
+		<div id="player-button" onclick="toggle_drawer();" unselectable="on"><i class="material-icons">audiotrack</i></div>
+	</div>
+	<footer>
+		<p>Created by David Bradley</p>
+		<p>E-Mail: <a href="mailto:contact@dbradley771.com">contact@dbradley771.com</a></p>
+	</footer>
+</body>
 </html>
