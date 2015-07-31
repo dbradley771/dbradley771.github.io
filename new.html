@@ -44,7 +44,6 @@
 			}
 						
 			$(document).ready(function() {
-				
 			   $("#player-slider-track").slider({
 					min: 0,
 					max: 100,
@@ -53,10 +52,18 @@
 					range: false,
 					animate: true
 				});
-			   
+			});
+			
+			$(window).load(function() {
 				setTimeout(function(){
 					$('#logo-background').fadeIn(5000);
 				}, 1000);
+				
+				song = document.getElementById("audio");
+				
+				song.play();
+				$( "#player-slider-track" ).slider( "enable" );
+				$('#player-slider-track').slider( "option", "max", song.duration );
 
 				$("#player-slider-track").slider({
 					slide: function( event, ui ) {
@@ -83,15 +90,6 @@
 					curtime = parseInt(song.currentTime, 10);
 					$("#player-slider-track").slider("value", curtime);
 				});
-			});
-			
-			$(window).load(function() {
-				song = document.getElementById("audio");
-				
-				$( "#player-slider-track" ).slider( "enable" );
-				
-				song.play();
-				$('#player-slider-track').slider( "option", "max", song.duration );
 			});
 	</script>
 </head>
