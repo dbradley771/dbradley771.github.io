@@ -28,9 +28,10 @@
 	<title>David Bradley</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<style type="text/css"></style>
-	<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!-- 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> -->
 	<script type="text/javascript">
-		<!--
 			function toggle_drawer() {
 				var drawer = document.getElementById('player-drawer');
 				if(drawer.style.right == '0px') {
@@ -41,13 +42,54 @@
 					drawer.style.right = '0px';
 				}
 			}
-		
-			$( document ).ready(function() {
+						
+			$(document).ready(function() {
+				song = document.getElementById("audio");
+				
+			   $("#player-slider-track").slider({
+					min: 0,
+					max: 100,
+					value: 0,
+					disabled: false,
+					range: false,
+					animate: true
+				});
+			   
 				setTimeout(function(){
 					$('#logo-background').fadeIn(5000);
 				}, 1000);
+
+				$("#player-slider-track").slider({
+					slide: function( event, ui ) {
+						song.currentTime = ui.value;
+					}
+				});
+				
+				playpausestate = 0;
+				
+				$("#player-playpause").on("click", "i", function(e) {
+					e.preventDefault();
+					if (playpausestate == 0) {
+						song.pause();
+						$(this).replaceWith('<i class="material-icons">play_arrow</i>');
+						playpausestate = 1;
+					} else {
+						song.play();
+						$(this).replaceWith('<i class="material-icons">pause</i>');
+						playpausestate = 0;
+					}
+				});
+				
+				song.addEventListener('timeupdate',function (){
+					curtime = parseInt(song.currentTime, 10);
+					$("#player-slider-track").slider("value", curtime);
+				});
 			});
-		//-->
+			
+			$(window).load(function() {
+				song.play();
+				$('#player-slider-track').slider( "option", "max", song.duration );
+			});
 	</script>
 </head>
 <body>
@@ -82,15 +124,18 @@
 			vel, pellentesque nisl. Cras lobortis luctus eros, quis porta ligula dapibus id.
 		</p>
 	</div>
-	<div id="player">
+	<div id="player" class="noselect">
+		<audio loop style="display: none;" id="audio">
+			<source src="music/music.ogg" type="audio/ogg">
+			<source src="music/music.mp3" type="audio/mpeg">
+		</audio>
 		<div id="player-chest">
-			<div id="player-drawer" style="right: 0px;">
+			<div id="player-drawer" style="right: -250px;">
 				<div id="player-control">
 					<div id="player-wrapper">
-						<div id="player-play" class="player-item"><i class="material-icons">play_arrow</i></div>
+						<div id="player-playpause" class="player-item"><i class="material-icons">pause</i></div>
 						<div id="player-slider" class="player-item">
 							<div id="player-slider-track">
-								<div id="player-slider-knob"></div>
 							</div>
 						</div>
 						<div id="player-volume" class="player-item"><i class="material-icons">volume_up</i></div>
@@ -98,7 +143,7 @@
 				</div>
 				<div id="player-credits">
 					<div id="player-wrapper">
-						<a href="https://proleter.bandcamp.com/album/curses-from-past-times-ep">"April Showers" by ProleteR</a>
+						<a href="https://proleter.bandcamp.com/album/curses-from-past-times-ep" class="yesselect">"April Showers" by ProleteR</a>
 					</div>
 				</div>
 			</div>
