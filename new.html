@@ -54,7 +54,7 @@
 				});
 			});
 			
-			$(window).load(function() {
+			function getThePartyStarted() {
 				setTimeout(function(){
 					$('#logo-background').fadeIn(5000);
 				}, 1000);
@@ -92,7 +92,7 @@
 					curtime = parseInt(song.currentTime, 10);
 					$("#player-slider-track").slider("value", curtime);
 				});
-			});
+			};
 	</script>
 </head>
 <body>
@@ -128,7 +128,7 @@
 		</p>
 	</div>
 	<div id="player" class="noselect">
-		<audio loop style="display: none;" id="audio">
+		<audio loop style="display: none;" id="audio" oncanplaythrough="getThePartyStarted()">
 			<source src="music/music.ogg" type="audio/ogg">
 			<source src="music/music.mp3" type="audio/mpeg">
 		</audio>
