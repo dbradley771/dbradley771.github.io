@@ -42,6 +42,20 @@
 					drawer.style.right = '0px';
 				}
 			}
+					
+			playpausestate = 'play';
+			
+			function set_music(type) {				
+				if(type == "play") {
+						song.play();
+						$("#player-playpause i").replaceWith('<i class="material-icons">pause</i>');
+						playpausestate = 'play';
+				} else {
+					song.pause();
+					$("#player-playpause i").replaceWith('<i class="material-icons">play_arrow</i>');				
+					playpausestate = 'pause';
+				}
+			}
 						
 			$(document).ready(function() {
 			   $("#player-slider-track").slider({
@@ -51,6 +65,15 @@
 					disabled: true,
 					range: false,
 					animate: true
+				});
+				
+				$("#player-playpause").on("click", "i", function(e) {
+					e.preventDefault();
+					if (playpausestate == 'play') {
+						set_music('pause');
+					} else {
+						set_music('play');
+					}
 				});
 			});
 			
@@ -64,27 +87,11 @@
 				song.play();
 				$( "#player-slider-track" ).slider( "enable" );
 				$('#player-slider-track').slider( "option", "max", song.duration );
-				
-				console.log(song.duration);
 
 				$("#player-slider-track").slider({
 					slide: function( event, ui ) {
 						song.currentTime = ui.value;
-					}
-				});
-				
-				playpausestate = 0;
-				
-				$("#player-playpause").on("click", "i", function(e) {
-					e.preventDefault();
-					if (playpausestate == 0) {
-						song.pause();
-						$(this).replaceWith('<i class="material-icons">play_arrow</i>');
-						playpausestate = 1;
-					} else {
-						song.play();
-						$(this).replaceWith('<i class="material-icons">pause</i>');
-						playpausestate = 0;
+						set_music('play');
 					}
 				});
 				
