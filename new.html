@@ -44,13 +44,12 @@
 			}
 						
 			$(document).ready(function() {
-				song = document.getElementById("audio");
 				
 			   $("#player-slider-track").slider({
 					min: 0,
 					max: 100,
 					value: 0,
-					disabled: false,
+					disabled: true,
 					range: false,
 					animate: true
 				});
@@ -87,6 +86,10 @@
 			});
 			
 			$(window).load(function() {
+				song = document.getElementById("audio");
+				
+				$( "#player-slider-track" ).slider( "enable" );
+				
 				song.play();
 				$('#player-slider-track').slider( "option", "max", song.duration );
 			});
