@@ -64,6 +64,8 @@
 				song.play();
 				$( "#player-slider-track" ).slider( "enable" );
 				$('#player-slider-track').slider( "option", "max", song.duration );
+				
+				console.log(song.duration);
 
 				$("#player-slider-track").slider({
 					slide: function( event, ui ) {
