@@ -138,12 +138,13 @@
 		<p id="demo"></p>
 
 		<script>
-		var xhttp = new XMLHttpRequest();
+		var request   = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
 				myFunction(xhttp);
 			}
 		};
+		
 		xhttp.open("GET", "http://www.w3schools.com/xml/books.xml", true);
 		xhttp.send();
 
@@ -155,3 +156,5 @@
 		</script>
 	</body>
 </html>
+
+6B2130CA62D01E06B28C1D466102E26C
