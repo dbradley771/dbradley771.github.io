@@ -38,7 +38,7 @@
 				color: #c7d5e0;
 				font-family: Motiva Sans, Arial, Helvetica, sans-serif;
 				font-size: 16px;
-				min-width: 900px;
+				min-width: 875px;
 			}
 						
 			a {
@@ -48,20 +48,26 @@
 			
 			table {
 				border-collapse: collapse;
-				background-repeat: no-repeat, repeat-y;
-				background-position: bottom center, center;
-				width: 100%;
+				background: rgba(0,0,0,0.3);
+				margin: 0 auto;
+				border: 1px solid rgba(0,0,0,0.7);
 			}
 
-			table, th, td {
+			th, td {
 				padding: 15px 0;
-				border-bottom: 1px solid #354D6B;
-				border-right: 1px solid rgba(53,77,107,0.2);
-				margin: 0 auto;
+			}
+			
+			td {
+				border-bottom: 1px solid rgba(53,77,107,0.25);
+				border-right: 1px solid rgba(53,77,107,0.25);
+			}
+			
+			td:last-child {
+				border-right: none;
 			}
 			
 			th {
-				background: rgba(0,0,0,0.2);
+				background: rgba(0,0,0,0.3);
 			}
 						
 			td {
@@ -73,21 +79,24 @@
 			td:nth-child(1) {
 				width: 100px;
 				font-weight: bold;
+				padding: 10px;
 			}
 			
 			td:nth-child(2) {
 				width: 330px;
+				padding: 20px;
 			}
 			
 			td:nth-child(3) {
 				padding: 20px;
-				min-width: 600px;
+				min-width: 330px;
 				font-weight: normal;
 				color: #C6D4DF;
 			}
 			
 			td:nth-child(4) {
 				width: 100px;
+				padding: 10px;
 			}
 			
 			.achieveRow {
