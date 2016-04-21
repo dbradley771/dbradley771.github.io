@@ -297,3 +297,17 @@ a {
 footer {
 	display: none;
 }
+
+/* --- Start Controls CSS --- */
+#controls {
+	text-align: center;
+	display: none;
+	position: fixed;
+	bottom: 2%;
+	right: 2%;
+	-webkit-transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-o-transition: opacity .25s ease-in-out;
+	transition: opacity .25s ease-in-out;
+}
+/* --- End Controls CSS --- */
