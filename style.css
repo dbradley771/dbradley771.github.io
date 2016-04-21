@@ -301,7 +301,6 @@ footer {
 /* --- Start Controls CSS --- */
 #controls {
 	text-align: center;
-	display: none;
 	position: fixed;
 	bottom: 2%;
 	right: 2%;
