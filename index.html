@@ -1,262 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="/favicons/favicon-194x194.png" sizes="194x194">
-		<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="/favicons/manifest.json">
-		<link rel="shortcut icon" href="/favicons/favicon.ico">
-		<meta name="apple-mobile-web-app-title" content="David Bradley">
-		<meta name="application-name" content="David Bradley">
-		<meta name="msapplication-TileColor" content="#00c800">
-		<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
-		<meta name="msapplication-config" content="/favicons/browserconfig.xml">
-		<meta name="theme-color" content="#009800">
-		<title>David Bradley</title>
-		<style type="text/css">
-			/* -- Tag only CSS --- */
-			
-			html, body {
-				height: 100%;
-				width: 100%;
-				margin: 0;
-				padding: 0;
-				background: black;
-				color: white;
-				font-family: Arial, sans-serif;
-			}
-			
-			a {
-				font-size: 75%;
-				text-decoration: none;
-				color: #555;
-			}
-			
-			h1 {
-				padding: 0;
-				margin: 0;
-			}
-			
-			/* ---- Class CSS ---- */
-			
-			.fade-in {
-				display: none;
-			}
-			
-			.wobble {
-				animation: wobble 10s ease-in-out infinite;
-				-moz-animation: wobble 10s ease-in-out infinite;
-				-webkit-animation: wobble 10s ease-in-out infinite;
-				visibility: visible !important;	
-			}
-			
-			/* -- Animation CSS -- */
-			
-			@keyframes wobble {
-				0% {
-					-ms-transform: rotate(3deg);
-					transform: rotate(3deg);
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="msapplication-TileColor" content="#00C800" />
+	<meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png" />
+	<meta name="msapplication-tooltip" content="David Bradley" />
+	<meta name="theme-color" content="#009800" />
+	<!-- Such favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png" />
+	<!-- End such favicon -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link rel="manifest" href="favicons/manifest.json" />
+	<title>David Bradley</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> -->
+	<script type="text/javascript">
+			function toggle_drawer() {
+				var drawer = document.getElementById('player-drawer');
+				if(drawer.style.right == '0px') {
+					drawer.style.transitionTimingFunction = 'cubic-bezier(.5,.05,.6,.35)';
+					drawer.style.right = '-250px';
+				} else {
+					drawer.style.transitionTimingFunction = 'cubic-bezier(.2,.75,.55,1)';
+					drawer.style.right = '0px';
 				}
-				50% {
-					-ms-transform: rotate(-3deg);
-					transform: rotate(-3deg);
-				}
-				100% {
-					-ms-transform: rotate(3deg);
-					transform: rotate(3deg);
-				}		
 			}
+					
+			playpausestate = 'play';
 			
-			@-moz-keyframes wobble {
-				0% {
-					-moz-transform: rotate(3deg);
-				}
-				50% {
-					-moz-transform: rotate(-3deg);
-				}
-				100% {
-					-moz-transform: rotate(3deg);
-				}		
-			}
-			
-			@-webkit-keyframes wobble {
-				0% {
-					-webkit-transform: rotate(3deg);
-				}
-				50% {
-					-webkit-transform: rotate(-3deg);
-				}
-				100% {
-					-webkit-transform: rotate(3deg);
+			function set_music(type) {				
+				if(type == "play") {
+						song.play();
+						$("#player-playpause i").replaceWith('<i class="material-icons">pause</i>');
+						playpausestate = 'play';
+				} else {
+					song.pause();
+					$("#player-playpause i").replaceWith('<i class="material-icons">play_arrow</i>');				
+					playpausestate = 'pause';
 				}
 			}
 			
-			/* ----- ID CSS ------ */
-			
-			/* Navbar */
-				#nb {
-					top: 15px;
-					position: fixed;
-					width: 100%;
-					height: 30px;
-					z-index:100;
-					min-width: 620px;
-					opacity: 0.25;
-					-webkit-transition: opacity .25s ease-in-out;
-					-moz-transition: opacity .25s ease-in-out;
-					-o-transition: opacity .25s ease-in-out;
-					transition: opacity .25s ease-in-out;
-				}
+			function getThePartyStarted() {
+				song = document.getElementById("audio");
 				
-				#nb:hover {
-					opacity: 1;
-				}
+				//song.play();
 				
-				@media (max-width: 620px){
-					#nbbg, #nblc, #nbrc{
-						display: none;
+				$( "#player-slider-track" ).slider( "enable" );
+				$('#player-slider-track').slider( "option", "max", song.duration );
+
+				$("#player-slider-track").slider({
+					slide: function( event, ui ) {
+						song.currentTime = ui.value;
+						set_music('play');
 					}
-				}
+				});
 				
-				#nbbg {
-					margin-top: -15px;
-					height: 60px;
-					background-color: rgba(0,0,0,0.75);
-					position: absolute;
-					width: 100%;
-				}
-				
-				#nbrc {
-					float: right;
-					position: relative;
-					line-height:30px;
-					width: auto;
-					padding-left: 5px;
-					padding-right: 30px;
-					text-align: right;
-				}
-				
-				#nbrc a {
-					display: inline;
-					padding-left: 15px;
-					color: #ffffff;
-					font-size: inherit;
-				}
-				
-				#nblc {
-					position: relative;
-					height: 30px;
-					width: auto;
-					max-width: 200px;
-				}
-				
-				#name {
-					padding-left: 30px;
-					font-size: 25px;
-					font-weight: bold;
-					line-height: 30px;
-				}
-			/* End Navbar */
-			
-			#color {
-				height: 100%;
-				width: 100%;
-				position: relative;
-				background-color: #00C800;
-			}
-			
-			#holder {
-				margin: 0 25%;
-				position: absolute;
-				top: 50%;
-				width:50%;
-				height:50%;
-				-ms-transform: translate(0, -50%);
-				-webkit-transform: translate(0, -50%);
-				-moz-transform: translate(0, -50%);
-				transform: translate(0, -50%);
-			}
-			
-			#image {
-				width:100%;
-				height:100%;
-				background: url(images/bg.png) no-repeat center center; 
-				-webkit-background-size: contain;
-				-moz-background-size: contain;
-				-o-background-size: contain;
-				background-size: contain;
-			}
-			
-			#controls {
-				text-align: center;
-				display: none;
-				position: fixed;
-				bottom: 2%;
-				right: 2%;
-				opacity: 0.25;
-				-webkit-transition: opacity .25s ease-in-out;
-				-moz-transition: opacity .25s ease-in-out;
-				-o-transition: opacity .25s ease-in-out;
-				transition: opacity .25s ease-in-out;
-			}
-			
-			#controls:hover {
-				opacity: 1;
-			}
-		</style>
-		<script src="https://code.jquery.com/jquery-1.11.0.js"></script>
-		<script>
-			$( document ).ready(function() {
-				setTimeout(function(){
-					$('#color').fadeIn(5000);
-					setTimeout(function(){
-						$('#nb').fadeIn(1500);
-						$('#controls').fadeIn(1500);
-					}, 5000);
-				}, 1000);
+				song.addEventListener('timeupdate',function (){
+					curtime = parseInt(song.currentTime, 10);
+					$("#player-slider-track").slider("value", curtime);
+				});
+			};
+			$(document).ready(function() {
+				$("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
 			});
-		</script>
-		<script type="text/javascript" async src="https://apis.google.com/js/platform.js?publisherid=106029859874749039380"></script>
-	</head>
-	<body>
-		<div id="nb" class="fade-in">
-			<div id="nbbg"></div>
-			<div id="nbrc">
-				<a href="http://facebook.dbradley771.com">Facebook</a>
-				<a href="http://twitter.dbradley771.com">Twitter</a>
-				<a href="http://plus.dbradley771.com">Google+</a>
-				<a href="http://youtube.dbradley771.com">YouTube</a>
-				<a href="http://github.dbradley771.com">Github</a>
+			
+			$(document).ready(function() {
+				
+				$("#player-slider-track").slider({
+					min: 0,
+					max: 100,
+					value: 0,
+					disabled: true,
+					range: false,
+					animate: true
+				});
+				
+				$("#player-playpause").on("click", "i", function(e) {
+					e.preventDefault();
+					if (playpausestate == 'play') {
+						set_music('pause');
+					} else {
+						set_music('play');
+					}
+				});				
+				
+				setTimeout(function(){
+					$('#logo-background').fadeIn(5000);
+				}, 500);
+				
+				setTimeout(function(){
+					$("#announcement").css("transition", "margin-top 2s");
+					$("#announcement").css("margin-top", 0);
+				}, 5500);
+				
+				setTimeout(function(){
+					$("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
+				}, 10500);
+			});
+	</script>
+</head>
+<body>
+	<header>
+		<button id="sidebar-button" role="button">=</button>
+		<h1>David Bradley</h1>
+	</header>
+	<nav>
+		<a href="http://facebook.com/dbradley771">Facebook</a>
+		<a href="http://twitter.com/dbradley771">Twitter</a>
+		<a href="http://youtube.com/dbradley771">YouTube</a>
+		<a href="http://github.com/dbradley771">GitHub</a>
+	</nav>
+	<div id="content">
+		<section id="announcement">
+			This website needs to be updated. I shall do that as soon as I can.
+		</section>
+		<section id="logo-section">
+			<div id="logo-background">
+				<div id="logo-holder">
+					<div id="logo" class="wobble"></div>
+				</div>
 			</div>
-			<div id="nblc">
-				<h1 id="name">David Bradley</h1>
+		</section>
+	</div>
+	<div id="player" class="noselect">
+		<audio loop style="display: none;" id="audio" oncanplaythrough="getThePartyStarted()">
+			<source src="music/music.ogg" type="audio/ogg">
+			<source src="music/music.mp3" type="audio/mpeg">
+		</audio>
+		<div id="player-chest">
+			<div id="player-drawer" style="right: -250px;">
+				<div id="player-control">
+					<div id="player-wrapper">
+						<div id="player-playpause" class="player-item"><i class="material-icons">pause</i></div>
+						<div id="player-slider" class="player-item">
+							<div id="player-slider-track">
+							</div>
+						</div>
+						<div id="player-volume" class="player-item"><i class="material-icons">volume_up</i></div>
+					</div>
+				</div>
+				<div id="player-credits">
+					<div id="player-wrapper">
+						<a href="https://proleter.bandcamp.com/album/curses-from-past-times-ep" class="yesselect">"April Showers" by ProleteR</a>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div id="color" class="fade-in">
-			<div id="holder">
-				<div id="image" class="wobble"></div>
-			</div>
-		</div>
-		<div id="controls">
-			<a href="https://proleter.bandcamp.com/album/curses-from-past-times-ep">"April Showers" by ProleteR</a><br/>
-			<audio loop autoplay controls>
-				<source src="music/music.ogg" type="audio/ogg">
-				<source src="music/music.mp3" type="audio/mpeg">
-			</audio>
-		</div>
-	</body>
+		<div id="player-button" onclick="toggle_drawer();" unselectable="on"><i class="material-icons">audiotrack</i></div>
+	</div>
+	<footer>
+		<p>Created by David Bradley</p>
+		<p>E-Mail: <a href="mailto:contact@dbradley771.com">contact@dbradley771.com</a></p>
+	</footer>
+</body>
 </html>

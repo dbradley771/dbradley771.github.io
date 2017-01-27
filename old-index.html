@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicons/favicon-194x194.png" sizes="194x194">
+		<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/favicons/manifest.json">
+		<link rel="shortcut icon" href="/favicons/favicon.ico">
+		<meta name="apple-mobile-web-app-title" content="David Bradley">
+		<meta name="application-name" content="David Bradley">
+		<meta name="msapplication-TileColor" content="#00c800">
+		<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+		<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#009800">
+		<title>David Bradley</title>
+		<style type="text/css">
+			/* -- Tag only CSS --- */
+			
+			html, body {
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				background: black;
+				color: white;
+				font-family: Arial, sans-serif;
+			}
+			
+			a {
+				font-size: 75%;
+				text-decoration: none;
+				color: #555;
+			}
+			
+			h1 {
+				padding: 0;
+				margin: 0;
+			}
+			
+			/* ---- Class CSS ---- */
+			
+			.fade-in {
+				display: none;
+			}
+			
+			.wobble {
+				animation: wobble 10s ease-in-out infinite;
+				-moz-animation: wobble 10s ease-in-out infinite;
+				-webkit-animation: wobble 10s ease-in-out infinite;
+				visibility: visible !important;	
+			}
+			
+			/* -- Animation CSS -- */
+			
+			@keyframes wobble {
+				0% {
+					-ms-transform: rotate(3deg);
+					transform: rotate(3deg);
+				}
+				50% {
+					-ms-transform: rotate(-3deg);
+					transform: rotate(-3deg);
+				}
+				100% {
+					-ms-transform: rotate(3deg);
+					transform: rotate(3deg);
+				}		
+			}
+			
+			@-moz-keyframes wobble {
+				0% {
+					-moz-transform: rotate(3deg);
+				}
+				50% {
+					-moz-transform: rotate(-3deg);
+				}
+				100% {
+					-moz-transform: rotate(3deg);
+				}		
+			}
+			
+			@-webkit-keyframes wobble {
+				0% {
+					-webkit-transform: rotate(3deg);
+				}
+				50% {
+					-webkit-transform: rotate(-3deg);
+				}
+				100% {
+					-webkit-transform: rotate(3deg);
+				}
+			}
+			
+			/* ----- ID CSS ------ */
+			
+			/* Navbar */
+				#nb {
+					top: 15px;
+					position: fixed;
+					width: 100%;
+					height: 30px;
+					z-index:100;
+					min-width: 620px;
+					opacity: 0.25;
+					-webkit-transition: opacity .25s ease-in-out;
+					-moz-transition: opacity .25s ease-in-out;
+					-o-transition: opacity .25s ease-in-out;
+					transition: opacity .25s ease-in-out;
+				}
+				
+				#nb:hover {
+					opacity: 1;
+				}
+				
+				@media (max-width: 620px){
+					#nbbg, #nblc, #nbrc{
+						display: none;
+					}
+				}
+				
+				#nbbg {
+					margin-top: -15px;
+					height: 60px;
+					background-color: rgba(0,0,0,0.75);
+					position: absolute;
+					width: 100%;
+				}
+				
+				#nbrc {
+					float: right;
+					position: relative;
+					line-height:30px;
+					width: auto;
+					padding-left: 5px;
+					padding-right: 30px;
+					text-align: right;
+				}
+				
+				#nbrc a {
+					display: inline;
+					padding-left: 15px;
+					color: #ffffff;
+					font-size: inherit;
+				}
+				
+				#nblc {
+					position: relative;
+					height: 30px;
+					width: auto;
+					max-width: 200px;
+				}
+				
+				#name {
+					padding-left: 30px;
+					font-size: 25px;
+					font-weight: bold;
+					line-height: 30px;
+				}
+			/* End Navbar */
+			
+			#color {
+				height: 100%;
+				width: 100%;
+				position: relative;
+				background-color: #00C800;
+			}
+			
+			#holder {
+				margin: 0 25%;
+				position: absolute;
+				top: 50%;
+				width:50%;
+				height:50%;
+				-ms-transform: translate(0, -50%);
+				-webkit-transform: translate(0, -50%);
+				-moz-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+			}
+			
+			#image {
+				width:100%;
+				height:100%;
+				background: url(images/bg.png) no-repeat center center; 
+				-webkit-background-size: contain;
+				-moz-background-size: contain;
+				-o-background-size: contain;
+				background-size: contain;
+			}
+			
+			#controls {
+				text-align: center;
+				display: none;
+				position: fixed;
+				bottom: 2%;
+				right: 2%;
+				opacity: 0.25;
+				-webkit-transition: opacity .25s ease-in-out;
+				-moz-transition: opacity .25s ease-in-out;
+				-o-transition: opacity .25s ease-in-out;
+				transition: opacity .25s ease-in-out;
+			}
+			
+			#controls:hover {
+				opacity: 1;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-1.11.0.js"></script>
+		<script>
+			$( document ).ready(function() {
+				setTimeout(function(){
+					$('#color').fadeIn(5000);
+					setTimeout(function(){
+						$('#nb').fadeIn(1500);
+						$('#controls').fadeIn(1500);
+					}, 5000);
+				}, 1000);
+			});
+		</script>
+		<script type="text/javascript" async src="https://apis.google.com/js/platform.js?publisherid=106029859874749039380"></script>
+	</head>
+	<body>
+		<div id="nb" class="fade-in">
+			<div id="nbbg"></div>
+			<div id="nbrc">
+				<a href="http://facebook.dbradley771.com">Facebook</a>
+				<a href="http://twitter.dbradley771.com">Twitter</a>
+				<a href="http://plus.dbradley771.com">Google+</a>
+				<a href="http://youtube.dbradley771.com">YouTube</a>
+				<a href="http://github.dbradley771.com">Github</a>
+			</div>
+			<div id="nblc">
+				<h1 id="name">David Bradley</h1>
+			</div>
+		</div>
+		<div id="color" class="fade-in">
+			<div id="holder">
+				<div id="image" class="wobble"></div>
+			</div>
+		</div>
+		<div id="controls">
+			<a href="https://proleter.bandcamp.com/album/curses-from-past-times-ep">"April Showers" by ProleteR</a><br/>
+			<audio loop autoplay controls>
+				<source src="music/music.ogg" type="audio/ogg">
+				<source src="music/music.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+	</body>
+</html>
