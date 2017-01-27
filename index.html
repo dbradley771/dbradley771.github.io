@@ -112,7 +112,9 @@
 				
 				setTimeout(function(){
 					$("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
-					$("#announcement").remove();
+					setTimeout(function(){
+						$("#announcement").remove();
+					}, 2000);
 				}, 10500);
 			});
 	</script>
