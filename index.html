@@ -32,104 +32,47 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> -->
 	<script type="text/javascript">
-			function toggle_drawer() {
-				var drawer = document.getElementById('player-drawer');
-				if(drawer.style.right == '0px') {
-					drawer.style.transitionTimingFunction = 'cubic-bezier(.5,.05,.6,.35)';
-					drawer.style.right = '-250px';
-				} else {
-					drawer.style.transitionTimingFunction = 'cubic-bezier(.2,.75,.55,1)';
-					drawer.style.right = '0px';
-				}
-			}
-					
-			playpausestate = 'play';
-			
-			function set_music(type) {				
-				if(type == "play") {
-						song.play();
-						$("#player-playpause i").replaceWith('<i class="material-icons">pause</i>');
-						playpausestate = 'play';
-				} else {
-					song.pause();
-					$("#player-playpause i").replaceWith('<i class="material-icons">play_arrow</i>');				
-					playpausestate = 'pause';
-				}
-			}
-			
-			function getThePartyStarted() {
-				song = document.getElementById("audio");
-				
-				//song.play();
-				
-				$( "#player-slider-track" ).slider( "enable" );
-				$('#player-slider-track').slider( "option", "max", song.duration );
-
-				$("#player-slider-track").slider({
-					slide: function( event, ui ) {
-						song.currentTime = ui.value;
-						set_music('play');
-					}
-				});
-				
-				song.addEventListener('timeupdate',function (){
-					curtime = parseInt(song.currentTime, 10);
-					$("#player-slider-track").slider("value", curtime);
-				});
-			};
-			$(document).ready(function() {
-				$("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
-			});
-			
-			$(document).ready(function() {
-				
-				$("#player-slider-track").slider({
-					min: 0,
-					max: 100,
-					value: 0,
-					disabled: true,
-					range: false,
-					animate: true
-				});
-				
-				$("#player-playpause").on("click", "i", function(e) {
-					e.preventDefault();
-					if (playpausestate == 'play') {
-						set_music('pause');
-					} else {
-						set_music('play');
-					}
-				});				
-				
-				setTimeout(function(){
-					$('#logo-background').fadeIn(5000);
-				}, 500);
-				
-				setTimeout(function(){
-					$("#announcement").css("transition", "margin-top 2s");
-					$("#announcement").css("margin-top", 0);
-				}, 5500);
-				
-				setTimeout(function(){
-					$("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
-					setTimeout(function(){
-						$("#announcement").remove();
-					}, 2000);
-				}, 10500);
-			});
+        function navLinkColor() {
+            $('.nav-link').each(function () {
+                var obj = $(this);
+                var bgColor = obj.find("#background-color").html();
+                var color = obj.find("#color").html();
+                obj.hover(
+                    function() {
+                        obj.css('background-color', bgColor);
+                        obj.css('color', color);
+                    }, function() {
+                        obj.css('background-color', '');
+                        obj.css('color', '');
+                    }
+                );
+            });
+        }
+    
+        $(document).ready(function() {
+            navLinkColor();
+            
+            $("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
+            
+            setTimeout(function(){
+                $('#logo-background').fadeTo(5000, 1);
+            }, 500);
+            
+            setTimeout(function(){
+                $("#announcement").css("transition", "margin-top 2s");
+                $("#announcement").css("margin-top", 0);
+            }, 5500);
+            
+            setTimeout(function(){
+                $("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
+                setTimeout(function(){
+                    $("#announcement").remove();
+                }, 2000);
+            }, 10500);
+        });
 	</script>
 </head>
 <body>
-	<header>
-		<button id="sidebar-button" role="button">=</button>
-		<h1>David Bradley</h1>
-	</header>
-	<nav>
-		<a href="http://facebook.com/dbradley771">Facebook</a>
-		<a href="http://twitter.com/dbradley771">Twitter</a>
-		<a href="http://youtube.com/dbradley771">YouTube</a>
-		<a href="http://github.com/dbradley771">GitHub</a>
-	</nav>
 	<div id="content">
 		<section id="announcement">
 			This website needs to be updated. I shall do that as soon as I can.
@@ -141,36 +84,50 @@
 				</div>
 			</div>
 		</section>
+        <nav>
+            <div id="nav-content">
+                <a class="nav-link" href="http://facebook.com/dbradley771">
+                    <span hidden id="background-color">#3b5998</span>
+                    <span hidden id="color">#fff</span>
+                    <span>Facebook</span>
+                </a>
+                <a class="nav-link" href="http://twitter.com/dbradley771">
+                    <span hidden id="background-color">#1da1f2</span>
+                    <span hidden id="color">#fff</span>
+                    <span>Twitter</span>
+                </a>
+                <a class="nav-link" href="https://www.snapchat.com/add/dbradley771">
+                    <span hidden id="background-color">#FFFC00</span>
+                    <span hidden id="color"></span>
+                    <span>Snapchat</span>
+                </a>
+                <a class="nav-link" href="https://www.instagram.com/dbradley771/">
+                    <span hidden id="background-color">#143956</span>
+                    <span hidden id="color">#fff</span>
+                    <span>Instagram</span>
+                </a>
+                <a class="nav-link" href="http://youtube.com/dbradley771">
+                    <span hidden id="background-color">#e62117</span>
+                    <span hidden id="color">#fff</span>
+                    <span>YouTube</span>
+                </a>
+                <a class="nav-link" href="http://github.com/dbradley771">
+                    <span hidden id="background-color">#24292e</span>
+                    <span hidden id="color">#fff</span>
+                    <span>GitHub</span>
+                </a>
+                <a class="nav-link" href="https://www.linkedin.com/in/dbradley771">
+                    <span hidden id="background-color">#0077b5</span>
+                    <span hidden id="color">#fff</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a class="nav-link" href="mailto:website@dbradley771.com">
+                    <span hidden id="background-color">grey</span>
+                    <span hidden id="color">#fff</span>
+                    <span>E&#8209;Mail</span>
+                </a>
+            </div>
+        </nav>
 	</div>
-	<div id="player" class="noselect">
-		<audio loop style="display: none;" id="audio" oncanplaythrough="getThePartyStarted()">
-			<source src="music/music.ogg" type="audio/ogg">
-			<source src="music/music.mp3" type="audio/mpeg">
-		</audio>
-		<div id="player-chest">
-			<div id="player-drawer" style="right: -250px;">
-				<div id="player-control">
-					<div id="player-wrapper">
-						<div id="player-playpause" class="player-item"><i class="material-icons">pause</i></div>
-						<div id="player-slider" class="player-item">
-							<div id="player-slider-track">
-							</div>
-						</div>
-						<div id="player-volume" class="player-item"><i class="material-icons">volume_up</i></div>
-					</div>
-				</div>
-				<div id="player-credits">
-					<div id="player-wrapper">
-						<a href="https://proleter.bandcamp.com/album/curses-from-past-times-ep" class="yesselect">"April Showers" by ProleteR</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="player-button" onclick="toggle_drawer();" unselectable="on"><i class="material-icons">audiotrack</i></div>
-	</div>
-	<footer>
-		<p>Created by David Bradley</p>
-		<p>E-Mail: <a href="mailto:contact@dbradley771.com">contact@dbradley771.com</a></p>
-	</footer>
 </body>
 </html>
