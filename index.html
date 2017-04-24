@@ -52,31 +52,14 @@
         $(document).ready(function() {
             navLinkColor();
             
-            $("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
-            
             setTimeout(function(){
                 $('#logo-background').fadeTo(5000, 1);
             }, 500);
-            
-            setTimeout(function(){
-                $("#announcement").css("transition", "margin-top 2s");
-                $("#announcement").css("margin-top", 0);
-            }, 5500);
-            
-            setTimeout(function(){
-                $("#announcement").css("margin-top", -$("#announcement").outerHeight(true) * 2);
-                setTimeout(function(){
-                    $("#announcement").remove();
-                }, 2000);
-            }, 10500);
         });
 	</script>
 </head>
 <body>
 	<div id="content">
-		<section id="announcement">
-			This website needs to be updated. I shall do that as soon as I can.
-		</section>
 		<section id="logo-section">
 			<div id="logo-background">
 				<div id="logo-holder">
@@ -110,6 +93,11 @@
                     <span hidden id="background-color">#e62117</span>
                     <span hidden id="color">#fff</span>
                     <span>YouTube</span>
+                </a>
+                <a class="nav-link" href="http://twitch.tv/dbradley771">
+                    <span hidden id="background-color">#6441a4</span>
+                    <span hidden id="color">#fff</span>
+                    <span>Twitch</span>
                 </a>
                 <a class="nav-link" href="http://github.com/dbradley771">
                     <span hidden id="background-color">#24292e</span>

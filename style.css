@@ -29,6 +29,7 @@ nav {
 
 #nav-content>* {
     flex: 1;
+    min-width: 6.5em;
     text-align: center;
     padding: 1em;
     border-right: 1px solid rgba(0,0,0,0.1);
@@ -151,44 +152,62 @@ nav a {
 }
 /* --- End Animation CSS --- */
 
-@media (max-width: 800px) {
+@media (max-width: 80em) {
     body {
         font-size: 90%;
     }
 }
 
-@media (max-width: 725px) {
+@media (max-width: 72em) {
     body {
         font-size: 80%;
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 64em) {
     body {
         font-size: 70%;
     }
 }
 
-@media (max-width: 565px) {
+@media (max-width: 56em) {
     body {
         font-size: 100%;
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 48em) {
     body {
         font-size: 90%;
     }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 40em) {
     body {
         font-size: 80%;
     }
 }
 
-@media (max-width: 345px) {
+@media (max-width: 36em) {
     body {
         font-size: 70%;
+    }
+}
+
+@media (max-width: 32em) {
+    body {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 26em) {
+    body {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 24em) {
+    body {
+        font-size: 80%;
     }
 }
