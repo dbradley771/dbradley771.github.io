@@ -1,3 +1,3 @@
-# dbradley771.github.io
-Code of my github.io page.
-dbradley771.com used as domain.
+# <dbradley771.com>
+
+Code of my website, <dbradley771.com>.
