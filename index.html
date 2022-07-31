@@ -125,7 +125,7 @@
         }
 
         #twitter-link:hover {
-            background-color: #1DA1F2;
+            background-color: #1B9DF0;
         }
 
         #twitter-link:hover>.social-logo {
@@ -161,15 +161,24 @@
         }
 
         #youtube-link:hover>.social-logo {
-            fill: #ff0000;
+            fill: #FF0000;
+        }
+
+        #twitch-link>.social-logo>.twitch-logo-1 {
+            opacity: 0;
         }
 
         #twitch-link:hover {
-            background-color: #F0F0FF;
+            background-color: #9146FF;
         }
 
-        #twitch-link:hover>.social-logo {
-            fill: #9146FF;
+        #twitch-link:hover>.social-logo>.twitch-logo-1 {
+            opacity: 1;
+            fill: white
+        }
+
+        #twitch-link:hover>.social-logo>.twitch-logo-2 {
+            fill: black
         }
 
         #github-link:hover {
@@ -181,15 +190,23 @@
         }
 
         #gitlab-link:hover {
-            background-color: #6E49CB;
+            background-color: #5943B6;
         }
 
-        #gitlab-link:hover>.social-logo {
-            fill: white;
+        #gitlab-link:hover>.social-logo>.gitlab-logo-1 {
+            fill: #E24329
+        }
+
+        #gitlab-link:hover>.social-logo>.gitlab-logo-2 {
+            fill: #FC6D26
+        }
+
+        #gitlab-link:hover>.social-logo>.gitlab-logo-3 {
+            fill: #FCA326
         }
 
         #stackoverflow-link:hover {
-            background-color: #f48224;
+            background-color: #F48024;
         }
 
         #stackoverflow-link:hover>.social-logo {
@@ -201,7 +218,7 @@
         }
 
         #linkedin-link:hover>.social-logo {
-            fill: #0a66c2;
+            fill: #0A66C2;
         }
 
         #logo-holder {
@@ -322,8 +339,12 @@
                         <a class="social-link" id="twitch-link" href="https://twitch.tv/dbradley771" title="Twitch"
                             aria-label="Twitch">
                             <svg class="social-logo" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0 1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" />
+                                <path class="twitch-logo-1"
+                                    d="m20.556 11.142-3.428 3.429h-3.429l-2.999 3v-3H6.843V1.714h13.713z" />
+                                <path class="twitch-logo-2"
+                                    d="M5.986 0 1.7 4.286v15.427h5.143v4.286l4.285-4.286h3.429l7.713-7.714V0H5.986Zm14.57 11.142-3.428 3.429h-3.429l-2.999 3v-3H6.843V1.714h13.713v9.428Z" />
+                                <path class="twitch-logo-2"
+                                    d="M16.271 4.714h1.714v5.143h-1.714zM11.557 4.714h1.714v5.143h-1.714z" />
                             </svg>
                         </a>
                     </li>
@@ -340,8 +361,14 @@
                         <a class="social-link" id="gitlab-link" href="https://gitlab.com/dbradley771" title="GitLab"
                             aria-label="GitLab">
                             <svg class="social-logo" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M4.845.904c-.435 0-.82.28-.955.692C2.639 5.449 1.246 9.728.07 13.335a1.437 1.437 0 0 0 .522 1.607l11.071 8.045c.2.145.472.144.67-.004l11.073-8.04a1.436 1.436 0 0 0 .522-1.61c-1.285-3.942-2.683-8.256-3.817-11.746a1.004 1.004 0 0 0-.957-.684.987.987 0 0 0-.949.69L15.8 9.001H8.203l-2.41-7.408a.987.987 0 0 0-.942-.69h-.006zm-.006 1.42 2.173 6.678H2.675zm14.326 0 2.168 6.678h-4.341zm-10.593 7.81h6.862c-1.142 3.52-2.288 7.04-3.434 10.559L8.572 10.135zm-5.514.005h4.321l3.086 9.5zm13.567 0h4.325c-2.467 3.17-4.95 6.328-7.411 9.502 1.028-3.167 2.059-6.334 3.086-9.502zM2.1 10.762l6.977 8.947-7.817-5.682a.305.305 0 0 1-.112-.341zm19.798 0 .952 2.922a.305.305 0 0 1-.11.341v.002l-7.82 5.68.026-.035z" />
+                                <path class="gitlab-logo-1"
+                                    d="m23.6 9.599-.033-.086L20.3.988a.849.849 0 0 0-.336-.405.874.874 0 0 0-1 .054.88.88 0 0 0-.29.439l-2.205 6.749H7.537L5.332 1.076a.86.86 0 0 0-.29-.441.875.875 0 0 0-1-.053.862.862 0 0 0-.336.404L.433 9.508l-.032.086a6.066 6.066 0 0 0 2.012 7.011l.011.008.03.022 4.976 3.726 2.462 1.863 1.499 1.132c.361.274.86.274 1.22 0l1.5-1.132 2.461-1.863 5.007-3.749.012-.01A6.067 6.067 0 0 0 23.6 9.599Z" />
+                                <path class="gitlab-logo-2"
+                                    d="m23.6 9.599-.033-.086a11.045 11.045 0 0 0-4.393 1.974L12 16.912c2.443 1.848 4.57 3.454 4.57 3.454l5.006-3.749.013-.01A6.069 6.069 0 0 0 23.6 9.599Z" />
+                                <path class="gitlab-logo-3"
+                                    d="m7.43 20.366 2.462 1.863 1.499 1.132c.361.274.86.274 1.22 0l1.5-1.132 2.461-1.863S14.443 18.755 12 16.912c-2.443 1.843-4.57 3.454-4.57 3.454Z" />
+                                <path class="gitlab-logo-2"
+                                    d="M4.824 11.487A11.02 11.02 0 0 0 .433 9.508l-.032.086a6.066 6.066 0 0 0 2.012 7.011l.011.008.03.022 4.976 3.726L12 16.907l-7.176-5.42Z" />
                             </svg>
                         </a>
                     </li>
